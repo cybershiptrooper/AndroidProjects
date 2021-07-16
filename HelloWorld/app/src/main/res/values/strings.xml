@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Hello World</string>
+    <string name="edit_message">Enter your name</string>
+    <string name="button_send">send</string>
+    <string name="button_back">Go Back</string>
+</resources>

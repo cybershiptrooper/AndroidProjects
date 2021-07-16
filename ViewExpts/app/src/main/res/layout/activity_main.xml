@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+        <Button
+            android:id="@+id/bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Bold"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/italics"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Italics"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Normal"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/notesView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout"
+        app:layout_constraintBottom_toTopOf="@id/bottomLayout"
+        tools:ignore="MissingConstraints">
+
+        <layout.ARNoteseEditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            tools:ignore="MissingConstraints" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <Button
+            android:id="@+id/add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add Text"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

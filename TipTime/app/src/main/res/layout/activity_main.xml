@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/service_cost_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/cost_of_service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cost_of_service"
+        app:srcCompat="@drawable/ic_baseline_shopping_bag_24"
+        app:tint="?attr/colorPrimary" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cost_of_service"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/cost_of_service"
+        app:layout_constraintStart_toEndOf="@id/service_cost_image"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cost_of_service_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    <EditText android:id="@+id/cost_of_service"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_width="160dp"-->
+
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+
+    <!--        android:hint="@string/cost_of_service"-->
+    <!--        android:inputType="numberDecimal"/>-->
+    <ImageView
+        android:id="@+id/service_review_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView"
+        app:srcCompat="@drawable/ic_baseline_room_service_24"
+        app:tint="?attr/colorPrimary" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:text="@string/how_was_the_service"
+        app:layout_constraintStart_toEndOf="@id/service_review_image"
+        app:layout_constraintTop_toBottomOf="@id/cost_of_service"
+        style="@style/Widget.TipTime.TextView"/>
+
+    <RadioGroup
+        android:id="@+id/radio_gaga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/textView">
+
+        <RadioButton
+            android:id="@+id/radio_amaze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amaze" />
+
+        <RadioButton
+            android:id="@+id/radio_good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/good" />
+
+        <RadioButton
+            android:id="@+id/radio_okay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/okay" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/round_up_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/round_up_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/round_up_switch"
+        app:srcCompat="@drawable/ic_baseline_call_made_24"
+        app:tint="?attr/colorPrimary" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/round_up_switch"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/round_up_tip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/round_up_image"
+        app:layout_constraintTop_toBottomOf="@id/radio_gaga" />
+
+
+    <Button
+        android:id="@+id/calculate_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:text="@string/calculate"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/round_up_switch"
+        app:layout_constraintTop_toBottomOf="@id/round_up_switch"
+
+        />
+
+    <TextView
+        android:id="@+id/tip_amt"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="@id/calculate_button"
+        app:layout_constraintTop_toBottomOf="@id/calculate_button"
+        tools:text="Tip Amount"
+        style="@style/Widget.TipTime.TextView"
+        />
+
+    <!--        tools:text="@string/tip_amount"-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

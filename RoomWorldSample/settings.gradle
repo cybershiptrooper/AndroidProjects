@@ -1,0 +1,2 @@
+rootProject.name = "RoomWorldSample"
+include ':app'
